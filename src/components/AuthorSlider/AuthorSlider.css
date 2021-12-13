@@ -1,0 +1,12 @@
+.author > h4 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: #7B7878;
+}
+
+.author-image > img {
+    max-width: 170px;
+}

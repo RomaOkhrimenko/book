@@ -1,0 +1,23 @@
+h2 {
+    color: #fff;
+}
+
+.recommends {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.recommends-title {
+    text-align: left;
+}
+
+.recommends-title > h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px; 
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
