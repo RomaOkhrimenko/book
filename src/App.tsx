@@ -1,11 +1,10 @@
-import { stat } from "fs";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import { horror } from "./features/horrorPage/horror";
+import { horror } from "./features/genrePage/horror";
 import { auth } from "./firebase/firebase";
 import { useTypesSelector } from "./hooks/useTypesSelector";
 import AuthorPage from "./page/AuthorPage/AuthorPage";
@@ -15,6 +14,9 @@ import GenresPage from "./page/GenrePage/GenrePage";
 import LoginPage from "./page/LoginPage/LoginPage";
 import { loginUser, logoutUser } from "./state/actions/userAction";
 import ProfilePage from "./page/ProfilePage/ProfilePage";
+import { fantastik } from "./features/genrePage/fantastika";
+import { roman } from "./features/genrePage/roman";
+import Bestseller from "./page/Bestseller/Bestseller";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="app">
         <Navbar />
         <div className="content">
           <div className="content-container">
@@ -63,6 +65,19 @@ function App() {
                   path="/horror"
                   element={<GenresPage title="Ужасы Мистика" data={horror} />}
                 />
+                <Route
+                  path="/fantasy"
+                  element={<GenresPage title="Фантастика, фэнтези" data={fantastik} />}
+                />
+                <Route
+                  path="/roman"
+                  element={<GenresPage title="Романы" data={roman} />}
+                />
+                <Route
+                  path="/bestseller"
+                  element={<Bestseller />}
+                />
+
               </Routes>
             )}
           </div>

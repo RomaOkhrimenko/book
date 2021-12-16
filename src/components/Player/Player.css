@@ -1,9 +1,72 @@
-.player {
+.player-book {
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     right: 0;
     width: calc(100% - 260px);
-    background-color: #000;
-    height: 10vh;
-    z-index: 100;
+    background: #0e0e0e;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    padding: 15px;
+    z-index: -1000;
+}
+
+.player-book.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 100000;
+}
+
+.player-book-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.player-book-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 25%;
+    margin: 0px 10px 0px 30px;
+  
+}
+.player-about-book {
+    text-align: left;
+    padding: 0 0 0 24px;
+    margin-bottom: 10px;
+}
+
+.player-book-info > img {
+    max-width: 60px;
+}
+
+.player-about-book > h4{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+}
+.player-about-book > span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #7B7878;
+
+}
+
+
+@media(max-width: 994px) {
+    .player-book {
+        width: 100%;
+    }
 }

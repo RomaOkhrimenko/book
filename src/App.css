@@ -1,3 +1,4 @@
+
 .content {
   margin-left: 260px;
 }
@@ -6,4 +7,10 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
+}
+
+@media(max-width: 994px) {
+  .content {
+    margin-left: 0px;
+  }
 }

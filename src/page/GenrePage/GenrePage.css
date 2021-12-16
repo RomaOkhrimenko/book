@@ -35,7 +35,7 @@
     border-radius: 15px;
     padding: 8px;
 }
-.result-search-book > img {
+.result-search-book> a > img {
     border-radius: 15px;
     height: 180px;
     width: 124px;
@@ -110,4 +110,27 @@
     line-height: 24px;
     letter-spacing: 0.05em;
     color: #7B7878;
+}
+
+@media(max-width: 767px) {
+    .search-book-info > h4 {
+        font-size: 13px;
+        line-height: 19px;
+    }
+    .result-search-title > h3 {
+        font-size: 19px;
+    }
+    .result-search-book> a > img {
+        border-radius: 15px;
+        height: 122px;
+        width: 84px;
+    }
+    .search-book-info > p {
+        display: none;
+    }
+
+    .search-book-writers > span {
+        font-size: 12px;
+        line-height: 17px;
+    }
 }

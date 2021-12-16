@@ -1,0 +1,38 @@
+.player-book-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px 10px;
+    position: relative;
+}
+
+.buttons-input > input {
+    width: 700px;
+}
+
+.book-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.current-time {
+    position: absolute;
+    left: 0px;
+}
+
+.duration-time {
+    position: absolute;
+    right: 0px;
+}
+
+.book-time > span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #7B7878;
+    margin-top: 10px;
+}

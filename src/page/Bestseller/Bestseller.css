@@ -1,0 +1,117 @@
+.bestseller {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bestseller-container {
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bestseller-book {
+    margin: 20px;
+    max-width: 250px;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bestseller-book > img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.bestseller-info {
+    text-align: left;
+    padding: 10px;
+}
+
+.bestseller-info > h2 {
+    font-size: 20px;
+}
+
+.bestseller-buy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translateX(50px);
+}
+
+.bestseller-book:hover .bestseller-buy {
+    transform: translateX(0px);
+}
+
+.bestseller-book::before {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .3s;
+}
+
+.bestseller-book:hover::before {
+    opacity: .3;
+    transition: opacity .3s;
+}
+
+.bestseller-buy > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.bestseller-buy > div > div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.bestseller-buy > div > div > a {
+    background-color: #fff;
+    margin-bottom: 20px;
+    line-height: 0px;
+    padding: 5px 5px;
+}
+
+.bestseller-buy > div > div > a > svg {
+    font-size: 19px;
+    color: rgba(255, 0, 0, 0.637);
+}
+
+.bestseller-buy > div > div:hover > .bestseller-buy-info {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+
+.bestseller-buy-info {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 0px 6px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-right: 5px;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.bestseller-buy-info > span {
+    font-size: 15px;
+    position: relative;
+}
+
+.bestseller-buy-info > span:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}

@@ -1,8 +1,8 @@
 import { FavoriteActionTypes } from "../reducers/favoriteReducer";
 
-export function addBook(book: any) {
+export function addBookFavorite(book: any) {
     return {
-        type: FavoriteActionTypes.ADDBOOK,
+        type: FavoriteActionTypes.ADDBOOKFAVORITE,
         book
     }
 }

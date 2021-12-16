@@ -12,7 +12,9 @@ import search from '../../assets/image/search.png'
 
 
 
-import { addBook } from '../../state/actions/favoriteAction';
+import { useTypesSelector } from '../../hooks/useTypesSelector';
+import { addBookAction } from '../../state/actions/bookAction';
+import { addBookFavorite } from '../../state/actions/favoriteAction';
 
 interface BookSlideState {
     data: any[]
@@ -21,26 +23,30 @@ interface BookSlideState {
 
 SwiperCore.use([Navigation, Pagination, Scrollbar])
 const BooKSlide: FC<BookSlideState> = ({data}) => {
+  const {book} = useTypesSelector(state => state.book)
   const dispatch = useDispatch()
   
     return (    
         <Swiper
         breakpoints = {{
             320: {
-              slidesPerView: 1.5,
+              slidesPerView: 1.6,
+              spaceBetween: 20
             },
-            330: {
-              slidesPerView: 2.05,
+            434: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            554: {
+              slidesPerView: 2.5,
             },
             650: {
-              slidesPerView: 4
+              slidesPerView: 3
             },
             830: {
-              slidesPerView: 5
-            },
-            995: {
-              slidesPerView: 3,
-            
+              slidesPerView: 4,
+              
+              spaceBetween: 20
             },
             // when window width is >= 480px
             1200: {
@@ -61,16 +67,17 @@ const BooKSlide: FC<BookSlideState> = ({data}) => {
 }
     >
       {data.map((book, index) => (
-                <SwiperSlide key={book.id} className='slider-con'>
+                <SwiperSlide key={book.id} className='slider-con' onClick={() => dispatch(addBookAction(book))
+                }>
                                 
                                 <div className="book">
-                                <Link to="/book">
+                                <Link to="/book" >
                                     <img src={book.image} alt="" />
                                     </Link>
                                     <h4>{book.title}</h4>
                                     <h5>{book.author}</h5>
                                    
-                                    <div className="book-like" onClick={() => dispatch(addBook(book))}>{book.liked ? <img src={search} alt="" /> : <img src={Like} alt="" />}</div>
+                                    <div className="book-like" onClick={() => dispatch(addBookFavorite(book))}>{book.liked ? <img src={search} alt="" /> : <img src={Like} alt="" />}</div>
                                 </div>
                             
                 </SwiperSlide>

@@ -20,25 +20,23 @@ const CollentionSlider: FC<CollectionSlideState> = ({data}) => {
         <Swiper
         breakpoints = {{
             320: {
-              slidesPerView: 1.1,
+              slidesPerView: 1.2,
             },
-            330: {
-              slidesPerView: 1.05,
+            450: {
+              slidesPerView: 1.5
             },
             650: {
               slidesPerView: 2
             },
-            830: {
-              slidesPerView: 3
+            750: {
+              slidesPerView: 2.5
             },
             995: {
-              slidesPerView: 3,
+              slidesPerView: 2,
             
             },
-            // when window width is >= 480px
-            1200: {
-              slidesPerView: 2,
-          
+            1150: {
+              slidesPerView: 2.5
             },
             // when window width is >= 640px
             1700: {
@@ -55,7 +53,7 @@ const CollentionSlider: FC<CollectionSlideState> = ({data}) => {
     >
       {data.map(collection => (
                 <SwiperSlide key={collection.id} className='slider-con'>
-                                <a href="book.html">
+                                
                                 <div className="collection">
                                         <img src={collection.image} alt={collection.title}/>
                                         <h4>{collection.title}</h4>
@@ -75,7 +73,7 @@ const CollentionSlider: FC<CollectionSlideState> = ({data}) => {
                                             <h4>{collection.genres.genre2}</h4>
                                         </div>
                                     </div>
-                            </a>
+                            
                 </SwiperSlide>
             ))}
     </Swiper>

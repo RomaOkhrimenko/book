@@ -10,7 +10,7 @@ import './HomePage.css'
 
 const HomePage: FC = () => {
     return (
-        <div>
+        <div className='homePage'>
             <div className="recommends">
                 <div className="recommends-title">
                 <h3>Рекомендации</h3>

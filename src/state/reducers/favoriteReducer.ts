@@ -1,10 +1,10 @@
 export enum FavoriteActionTypes {
-    ADDBOOK = "ADDBOOK",
+    ADDBOOKFAVORITE = "ADDBOOKFAVORITE",
     ADDAUTHOR = "ADDAUTHOR"
 }
 
 interface favoriteAddBookAction {
-    type: FavoriteActionTypes.ADDBOOK,
+    type: FavoriteActionTypes.ADDBOOKFAVORITE,
     book: any
 }
 
@@ -22,7 +22,7 @@ const initialState: FavoriteState = {
 
 export const favoriteReducer = (state = initialState, action: FavoriteAction) => {
     switch(action.type) {
-        case FavoriteActionTypes.ADDBOOK: 
+        case FavoriteActionTypes.ADDBOOKFAVORITE: 
            return {...state, books: [...state.books, action.book]}
 
 

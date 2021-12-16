@@ -7,11 +7,17 @@ import starImg from "../../../assets/image/books/star.png";
 import starDesc from "../../../assets/image/books/star-rate-desc.png";
 import bookOpen from "../../../assets/image/authors/book-open.png";
 
-const AuthorInfo: FC = () => {
+interface AuthorState {
+  fullName: string
+  image: any
+  desc: string
+}
+
+const AuthorInfo: FC<AuthorState> = ({fullName, image, desc}) => {
   return (
     <div className="main-author">
       <div className="author-image-rate">
-        <img src={author} alt="" />
+        <img src={image} alt="" />
         <div className="author-rate">
           <div className="author-rate-star">
             <img src={starImg} alt="starImg" />
@@ -26,7 +32,7 @@ const AuthorInfo: FC = () => {
 
       <div className="author-info">
         <div className="author-info-title">
-          <h4>Стивен кинг</h4>
+          <h4>{fullName}</h4>
           <img src={starDesc} alt="starDesc" />
           <span>4.6</span>
         </div>
@@ -36,10 +42,7 @@ const AuthorInfo: FC = () => {
         </div>
         <div className="about-author">
           <p>
-            Стивен Эдвин Кинг (род. 21 сентября 1947, Портленд, Мэн, США) —
-            американский писатель, работающий в разнообразных жанрах, включая
-            ужасы, триллер, фантастику, фэнтези, мистику, драму, детектив;
-            получил прозвище «Король ужасов».
+            {desc}
           </p>
         </div>
         <div className="author-facts">
@@ -55,12 +58,6 @@ const AuthorInfo: FC = () => {
               семьи. Мать говорила сыновьям, что отца похитили марсиане.
               Возможно, эта белая ложь стала вдохновением для написания мрачных
               историй.
-            </li>
-            <li>
-              Интересная закономерность: многие именитые люди предпочитают
-              слушать рок, и Кинг не стал исключением. Стивен любит писать,
-              слушая "AC/DC", а одно время он играл на гитаре и пел в рок-группе
-              "Rock Bottom Remainders".
             </li>
           </ul>
         </div>

@@ -78,3 +78,22 @@
 .book-like {
     cursor: pointer;
 }
+
+@media(max-width: 994px) {
+    .book {
+        width: 175px;
+        height: 310px;
+    }
+
+    .book > h4 {
+        padding-top: 10px;
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .book > h5 {
+        font-size: 10px;
+    }
+    .book> a > img {
+        height: 195px;
+    }
+}

@@ -12,9 +12,15 @@ import voiceOver from '../../../assets/image/books/voiceover.png'
 import headphones from '../../../assets/image/books/headphones.png'
 import clock from '../../../assets/image/books/clock.png'
 
+interface BookInfo {
+    viewPlayer: any
+    image: any,
+    title: string,
+    author: string,
+    desc: string
+}
 
-
-const BookInfo: FC = () => {
+const BookInfo: FC<BookInfo> = ({image, title, author, desc, viewPlayer}) => {
     return (
         <div className="about-book">
                     <div className="phone-book-genre">
@@ -23,8 +29,8 @@ const BookInfo: FC = () => {
                     </div>
                     <div className="book-img-rate">
                         <div className="about-book-img">
-                            <img className="book-image-preview" src={Ava} alt=""/>
-                            <div className='book-play-con'>
+                            <img className="book-image-preview" src={image} alt=""/>
+                            <div className='book-play-con' onClick={() => viewPlayer()}>
                             <img className="book-image-play" src={playImg} alt=""/>
                             </div>
                         </div>
@@ -45,13 +51,13 @@ const BookInfo: FC = () => {
                             <h5>Фантастика, фэнтези, мистика</h5>
                         </div>
                         <div className="about-title-rate">
-                            <h4>Мара и морок</h4>
+                            <h4>{title}</h4>
                             <img src={starDesc} alt=""/>
                             <h5>3.5</h5>
                         </div>
                         <div className="about-writers">
                             <img src={writesImg} alt=""/>
-                            <p>Лия Арден</p>
+                            <p>{author}</p>
                         </div>
                         <div className="about-voiceover">
                             <img src={voiceOver} alt=""/>
@@ -74,9 +80,9 @@ const BookInfo: FC = () => {
                         </div>
 
                         <div className="about-desc-book">
-                            <p>Я умерла много лет назад, но когда моя помощь понадобилась правителям Аракена, меня подняли из могилы. Таких, как я, в народе называют Марами. Когда-то давно нас было семеро. Меня и шестерых сестер были отметила сама богиня смерти Морана. Сейчас лишь немногие помнят о том, что мы избавляли леса от нечисти и отправляли неупокоенные души в потусторонний мир. Годами позже мы оказались втянуты в политику, и это нас всех и погубило. И теперь байками о Марах, скитающихся по земле с собственной головой подмышкой, пугают детей…
+                            <p>{desc}
                             </p>
-                            <p>Но даже мы кое-кого боимся, и имя ему – Морок. Слуга самой Тени поднял меня из земли и оживил, привязав к себе чарами. Если попробую я сбежать, он тут же выследит меня, словно пес, может и в Тень отправить. А там гораздо хуже, чем в сырой земле… Поэтому мне придется быть послушной, пока я не придумаю, как избавиться от связи с Мороком. У меня появился шанс отомстить за наши с сестрами загубленные жизни, и я его использую.</p>
+                           
                         </div>
                     </div>
                 </div>

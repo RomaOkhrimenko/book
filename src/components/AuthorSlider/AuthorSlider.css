@@ -10,3 +10,13 @@
 .author-image > img {
     max-width: 170px;
 }
+
+@media(max-width: 556px) {
+    .author-image > img {
+        max-width: 150px;
+    }
+
+    .author > h4 {
+        font-size: 13px;
+    }
+}

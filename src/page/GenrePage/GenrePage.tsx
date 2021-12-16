@@ -4,7 +4,9 @@ import './GenrePage.css'
 
 import writesImg from '../../assets/image/books/writes.png'
 import clock from '../../assets/image/clock.png'
-import like from '../../assets//image/like.png'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addBookAction } from '../../state/actions/bookAction'
 
 interface GenrePage {
     title: string
@@ -12,16 +14,21 @@ interface GenrePage {
 }
 
 const GenresPage: FC<GenrePage> = ({title, data}) => {
+    const dispatch = useDispatch()
+
     return (
         <div className='result-search'>
             <div className="result-search-title">
                 <h3>{title}</h3>
             </div>
             {data.map(book => (
+                
                 <div className="result-search-book">
-                <img src={book.image} alt="" />
+                <Link to="/book">
+                <img onClick={() => dispatch(addBookAction(book))} src={book.image} alt="" />
+                </Link>
                 <div className="search-book-info">
-                    <h4>{book.book}</h4>
+                    <h4>{book.title}</h4>
                     <p>{book.desc}</p>
                     <div className="writers">
                         <div className="search-book-writers">
@@ -34,7 +41,6 @@ const GenresPage: FC<GenrePage> = ({title, data}) => {
                         <p>{book.time}</p>
                     </div>
                 </div>
-                <div className="search-book-like"><img src={like} alt="like" /></div>
             </div>
             ))}
             

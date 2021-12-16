@@ -96,6 +96,7 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 36px;
+    text-align: left;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -244,4 +245,197 @@
 
 .phone-book-genre {
     display: none;
+}
+
+@media (max-width: 1300px) {
+    .about-book-img {
+        width: 300px;
+        height: 460px;
+        position: relative;
+    }
+    .buttons-input > input {
+        width: 350px;
+    }
+    .player-book-depen {
+        margin: 0px 10px;
+    }
+}
+
+@media(max-width: 1100px) {
+    .navbar {
+        overflow-y: scroll;
+    }
+    .about-book {
+        flex-direction: column;
+    }
+    .phone-book-genre {
+        display: block;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 16px;
+    }
+    .phone-book-genre > h5{
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    line-height: 110%;
+    letter-spacing: 0.03em;
+    color: #B9B9B9;
+    padding: 0px 15px;
+    }
+    .about-book-img {
+        margin-bottom: 20px;
+    }
+    .book-img-rate {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .book-rate {
+        display: none;
+    }
+    .about-genre {
+        display: none;
+    }
+    .about-book-info {
+        border-radius: 15px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-book-img {
+        width: 200px;
+        height: 267px;
+    }
+    .about-book-info {
+        margin: 0px 5px;
+    }
+    .about-book-img > .book-image-play {
+        position: absolute;
+        top: 38%;
+        width: 40px;
+        left: 41%;
+    }
+    .about-title-rate > h4 {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+    .about-title-rate > img {
+        width: 15px;
+        padding-bottom: 2px;
+    }
+    .about-title-rate > h5 {
+        font-size: 15px;
+    }
+    .about-writers > img {
+        width: 12px;
+    }
+    .about-writers > p {
+        font-size: 10px;
+    }
+
+    .about-voiceover {
+        padding-top: 0px;
+    }
+    .about-voiceover > img {
+        width: 12px;
+    }
+    .about-voiceover > p {
+        font-size: 10px;
+    }
+
+    .about-cycle > h4 {
+        font-size: 11px;
+    }
+    .about-cycle > h4:after {
+        height: 17px;
+        margin-left: 5px;
+        margin-top: 3px;
+        padding-top: 0px;
+    }
+
+    .about-cycle > h5 {
+        font-size: 12px;
+        padding-left: 1px;
+    }
+
+    .about-cycle-hear-time > .cycle-hear > p {
+        font-size: 11px;
+    }
+    .about-cycle-hear-time > .cycle-hear > img {
+        width: 14px;
+    }
+    .about-cycle-hear-time > .cycle-time > p {
+        font-size: 11px;
+    }
+    .about-cycle-hear-time > .cycle-time > img {
+        width: 14px;
+        padding-top: 1px;
+    }
+    .about-desc-book {
+        padding-top: 5px;
+        margin-top: 5px;
+    }
+
+    .about-desc-book p {
+        font-size: 12px;
+        padding-bottom: 10px;
+        line-height: 24px;
+    }
+
+    .comments-book-container {
+        margin: 0px 16px;
+    }
+
+    .comment-ava > img {
+        width: 25px;
+    }
+    .name-rate > img {
+        width: 12px;
+    }
+
+    .name-rate > h4 {
+        font-size: 10px;
+        line-height: 17px;
+        padding-right: 0px;
+    }
+
+    .comment-desc > p {
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .more-btn > a {
+        font-size: 10px;
+        padding: 13px 33px;
+    }
+
+    .comment-area {
+        margin: 30px 0px;
+    }
+
+    .area-container {
+        padding: 8px;
+    }
+    .area-container > .ava > img {
+        width: 30px;
+    }
+
+    .area-container > textarea {
+        min-height: 118px;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .book-play-con {
+        top: 40%;
+        left: 37%;
+        padding: 12px 12px 7px 17px;
+    }
+
+    .book-image-play {
+        max-width: 30px;
+    }
+    
 }

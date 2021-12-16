@@ -56,3 +56,24 @@
     margin-right: 10px;
     padding-top: 3px;
 }
+
+.header-menu {
+    display: none;
+    margin-top: 5px;
+    margin: 5px 10px 0px 20px;
+}
+
+@media(max-width: 994px) {
+
+    .header-menu {
+        display: block;
+        margin-top: 5px;
+        margin: 5px 10px 0px 20px;
+    }
+    .header-search {
+        margin: 0px 50px 0px 25px;
+    }
+    .header-login > span {
+        display: none;
+    }
+}

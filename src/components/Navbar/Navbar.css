@@ -5,8 +5,9 @@
     width: 260px;
     padding: 5px 10px 30px 10px;
     background: #0e0e0e;
-
 }
+
+
 .navbar-close {
     display: none;
 }
@@ -71,3 +72,31 @@
 .navbar-navigation > ul > li:hover a{
     color: #A30106;
 } 
+
+@media(max-width:994px) {
+    .navbar {
+        transform: translateX(-300px);
+        z-index: 100;
+        overflow-y: scroll;
+        top: 0;
+    }
+
+    .navbar.active {
+        transform: translateX(0px);
+        overflow-y: scroll;
+    }
+
+    .navbar-title {
+        margin-top: 20px;
+    }
+
+    .navbar-close {
+        display: block;
+        position: absolute;
+        right: 10px;
+    }
+
+    .navbar-navigation {
+        margin-top: 20px;
+    }
+}
