@@ -77,7 +77,7 @@ const BooKSlide: FC<BookSlideState> = ({data}) => {
                                     <h4>{book.title}</h4>
                                     <h5>{book.author}</h5>
                                    
-                                    <div className="book-like" onClick={() => dispatch(addBookFavorite(book))}>{book.liked ? <img src={search} alt="" /> : <img src={Like} alt="" />}</div>
+                                    <div className="book-like" onClick={() => dispatch(addBookFavorite(book, book.id))}>{book.liked ? <img src={search} alt="" /> : <img src={Like} alt="" />}</div>
                                 </div>
                             
                 </SwiperSlide>

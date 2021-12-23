@@ -49,43 +49,51 @@ const Player: FC<PlayerState> = ({ image, title, author, viewPlayer }) => {
   }
 
   const rewindLeft = () => {
-    setCurrentTime(prev => prev -15)
+    const audio = audioRef.current
+    audio.currentTime = audio.currentTime - 10
   }
 
- 
+  const rewindRight = () => {
+    const audio = audioRef.current
+    audio.currentTime = audio.currentTime + 10
+  }
+
+  
 
   return (
-    <div className="player-book active">
-      <audio
-        ref={audioRef}
-        src="https://s3.eu-central-1.amazonaws.com/elib.live/uzhasy/zapertie-obuhova.mp3"
-        onTimeUpdate={getCurrDuration}
-        onLoadedData={(e:any) => {
-            setDuration(e.currentTarget.duration.toFixed(2))
-          }}
-
+    <div className="player-book player-phone-main active">
+      <audio 
+      ref={audioRef}
+      onTimeUpdate={getCurrDuration}
+        onLoadedData={(e: any) => {
+          setDuration(e.currentTarget.duration.toFixed(2))
+        }}
+      src="https://s3.eu-central-1.amazonaws.com/elib.live/uzhasy/zapertie-obuhova.mp3"
+      
       ></audio>
-      <div className="player-book-container">
-        <div className="player-book-info">
-          <img src={image} alt="" />
-          <div className="player-about-book">
-            <h4>{title}</h4>
-            <span>{author}</span>
-          </div>
-        </div>
-        <Buttons
-        percentage={percentage} 
-        onChange={onChange} 
-        play={play}
-        isPlaying={isPlaying}
-        duration={duration}
-        currentTime={currentTime}
-        audioRef={audioRef}
-        rewindLeft={rewindLeft} />
+        <div className="player-book-container">
+            <div className="player-book-info">
+                <img src={image} alt={title} />
+                <div className="player-about-book">
+                    <h4>{title}</h4>
+                    <span>{author}</span>
+                </div>
+            </div>
+            <Buttons
+            play={play}
+            isPlaying={isPlaying}
+            duration={duration}
+            currentTime={currentTime}
+            percentage={percentage}
+            onChange={onChange}
+            rewindLeft={rewindLeft}
+            rewindRight={rewindRight}
+            />
+            <Depen
+            viewPlayer={viewPlayer} />
 
-        <Depen
-        viewPlayer={viewPlayer} />
-      </div>
+        </div>
+        <input id="progress-bar-main" className="progress-bar-main" type="range" min="0" max="100" value={percentage} onChange={onChange} />
     </div>
   );
 };

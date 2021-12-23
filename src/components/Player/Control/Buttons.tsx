@@ -4,23 +4,22 @@ import left from '../../../assets/image/books/player/left-rewind-10.png'
 import playPc from '../../../assets/image/books/player/play-player.png'
 import pausePc from '../../../assets/image/books/player/pause-player.png'
 import right from '../../../assets/image/books/player/right-rewind-10.png'
-
-import './Button.css'
 import Slide from './Slide'
 
 
 interface ButtonState {
-    percentage: any
-    onChange: any
-    play: any
-    isPlaying: any
-    duration: any
-    currentTime: any
-    audioRef: any
+    percentage?: any
+    onChange?: any
+    play?: any
+    isPlaying?: any
+    duration?: any
+    currentTime?: any
+    audioRef?: any
     rewindLeft: any
+    rewindRight: any
 }
 
-const Buttons:FC<ButtonState> = ({percentage, onChange, play, isPlaying, duration, currentTime, rewindLeft }) => {
+const Buttons:FC<ButtonState> = ({percentage, onChange, play, isPlaying, duration, currentTime,rewindLeft, rewindRight}) => {
     function secondsToHms(seconds: any) {
         if (!seconds) return '00m 00s'
     
@@ -52,21 +51,20 @@ const Buttons:FC<ButtonState> = ({percentage, onChange, play, isPlaying, duratio
       }
 
     return (
-        <div className="player-book-buttons">
-           
-                <Slide percentage={percentage} onChange={onChange} />
-                <div className="book-time">
-                    <span className="current-time">{secondsToHms(currentTime)}</span>
-                    <span className="duration-time">{secondsToHms(duration)}</span>
-                </div>
-                <div className="buttons-navigation">
-                    <img className="main-minus" onClick={() => rewindLeft()} src={left} alt="left" />
-                    <div className="play-books">
-                    <img  src={isPlaying ? pausePc : playPc} onClick={play}  alt="" width="40px;" />
-                     </div>
-                    <img className="main-plus" src={right} alt="right" />
-                </div>
-            </div>
+      <div className="player-book-buttons">
+      <Slide percentage={percentage} onChange={onChange} />
+      <div className="book-time">
+          <span className="current-time">{secondsToHms(currentTime)}</span>
+          <span className="duration-time">{secondsToHms(duration)}</span>
+      </div>
+      <div className="buttons-navigation">
+        <img src={left} onClick={rewindLeft} alt="rewindRight" />
+          <div className="play-books">
+          <img  onClick={play}  src={isPlaying ? pausePc : playPc } alt="d" />
+           </div>
+           <img src={right} onClick={rewindRight} alt="onClick={rewindLeft}" />
+      </div>
+  </div>
     )
 }       
 

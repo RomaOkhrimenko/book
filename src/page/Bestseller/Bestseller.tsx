@@ -1,17 +1,17 @@
 import axios from 'axios'
 import React, { FC, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import Button from '../../components/PlayerTest/Controls/Button'
 import { useTypesSelector } from '../../hooks/useTypesSelector'
 import { fetchBestsellerAction } from '../../state/actions/bookAction'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 import './Bestseller.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Loader from '../../components/Loader/Loader'
 
 const Bestseller: FC = () => {
     const dispatch = useDispatch()
-    const {bestseller} = useTypesSelector(state => state.book)
+    const {bestseller, loader} = useTypesSelector(state => state.book)
     
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const Bestseller: FC = () => {
     return (
         <div className='bestseller'>
             <div className="bestseller-container">
+                {loader ? <div className='loader'><Loader /></div> : null}
             {bestseller.map(book => {
                 return <div key={book.rank} className='bestseller-book'>
                     

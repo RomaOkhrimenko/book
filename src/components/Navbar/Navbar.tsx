@@ -6,26 +6,18 @@ import NavOneImg from '../../assets/image/nav-1.png'
 import NavTwoImg from '../../assets/image/nav-2.png'
 import NavThreeImg from '../../assets/image/nav-3.png'
 import { Link } from 'react-router-dom'
-import { useTypesSelector } from '../../hooks/useTypesSelector'
 import navClose from '../../assets/image/close.png'
-import { useDispatch } from 'react-redux'
-import { navbarAction } from '../../state/actions/componentAction'
 
-const Navbar: FC = () => {
-    const [navPhone, setNavPhone] = useState(false)
-    const {navbarPhone} = useTypesSelector(state => state.component)
-    const dispatch = useDispatch()
+interface NavbarState {
+    navPhone: any
+    navbarPhone: any
+}
 
-    function navbarprone() {
-        setNavPhone(
-            prev => !prev
-        )
-        dispatch(navbarAction(navPhone))
-    }
+const Navbar: FC<NavbarState> = ({navPhone, navbarPhone}) => {
 
     return (
         <nav className={navbarPhone ? 'navbar active' : 'navbar'}>
-        <div className="navbar-close"onClick={() => navbarprone()}>
+        <div className="navbar-close"onClick={navPhone}>
             <img id="navbar-close" src={navClose} alt="d" />
         </div>
         <div className="navbar-title">
@@ -39,7 +31,7 @@ const Navbar: FC = () => {
             <ul>
                 <li><Link to='/fantasy'>Фантастика, фэнтези</Link></li>
                 <li><Link to='/horror'>Ужасы, мистика</Link></li>
-                <li><Link to='/horror'>Детективы, триллеры</Link></li>
+                <li><Link to='/detective'>Детективы, триллеры</Link></li>
                  <li><Link to='/roman'>Романы</Link></li>
                  <li><Link to='/bestseller'>Бестселлеры</Link></li>
             </ul>

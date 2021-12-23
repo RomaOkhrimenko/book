@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -17,11 +17,15 @@ import ProfilePage from "./page/ProfilePage/ProfilePage";
 import { fantastik } from "./features/genrePage/fantastika";
 import { roman } from "./features/genrePage/roman";
 import Bestseller from "./page/Bestseller/Bestseller";
+import { detective } from "./features/genrePage/detective";
 
 function App() {
+  const [navbarPhone, setNavbarPhone] = useState(false)
   const dispatch = useDispatch();
 
   const { user } = useTypesSelector((state) => state.user);
+  
+  const navPhone = () => setNavbarPhone(prev => !prev)
   
 
   useEffect(() => {
@@ -47,11 +51,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <Navbar />
+        <Navbar navPhone={navPhone} navbarPhone={navbarPhone} />
         <div className="content">
           <div className="content-container">
             
-            {!user ? <Header /> : <Header title={user.name} />}
+            {!user ? <Header /> : <Header title={user.name} navPhone={navPhone} />}
             {!user ? (
               <LoginPage />
             ) : (
@@ -76,6 +80,10 @@ function App() {
                 <Route
                   path="/bestseller"
                   element={<Bestseller />}
+                />
+                <Route
+                  path="/detective"
+                  element={<GenresPage title="Романы" data={detective} />}
                 />
 
               </Routes>

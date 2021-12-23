@@ -8,6 +8,15 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: 100%;
+    position: relative;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
 }
 
 .bestseller-book {

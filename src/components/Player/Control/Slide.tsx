@@ -13,15 +13,8 @@ const Slide: FC<SliderState> = ({percentage, onChange}) => {
   }, [percentage]);
   return (
     <div className="buttons-input">
-      <input
-        className="progress-bar-main"
-        type="range"
-        min="0"
-        max="100"
-        value={position}
-        onChange={onChange}
-      />
-    </div>
+          <input className="progress-bar-main" type="range" min="0" max="100" value={position} onChange={onChange} />
+      </div>
   );
 };
 
