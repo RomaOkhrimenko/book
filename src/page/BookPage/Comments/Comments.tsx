@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { comments } from "../../../features/bookPage/comments";
 
 import "./Comments.css";
 
 
 import profileava from '../../../assets/image/books/codicon_account.png'
+import { Link } from "react-router-dom";
 
 const Comments: FC = () => {
   return (
@@ -13,7 +14,7 @@ const Comments: FC = () => {
       {comments.map((comment) => (
         <div key={comment.id} className="comment">
           <div className="comment-ava">
-            <img src={comment.avatar} alt="" />
+            <img src={comment.avatar} alt="d" />
           </div>
           <div className="comment-desc">
             <div className="name-rate">
@@ -25,7 +26,7 @@ const Comments: FC = () => {
       ))}
 
       <div className="more-btn">
-        <a href="#">Показать ещё</a>
+        <Link to="/">Показать ещё</Link>
       </div>
     </div>
 
@@ -39,7 +40,7 @@ const Comments: FC = () => {
                 </div>
 
                 <div className="more-btn">
-        <a href="#">Опубликовать</a>
+        <Link to="/">Опубликовать</Link>
       </div>
     </div>
   );

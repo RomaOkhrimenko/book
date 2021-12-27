@@ -1,21 +1,30 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import {Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
 
 import 'swiper/swiper-bundle.css';
 import './CollectionSlider.css'
 
-import Like from '../../assets/image/like.png'
 import clock from '../../assets/image/clock.png'
 import booksCol from '../../assets/image/collection/book-collection.png'
 
+interface ICollection {
+  id: number;
+  genres: any;
+  books: number;
+  title: string;
+  image: string;
+  time: string | number;
+}
+
 interface CollectionSlideState {
-    data: any[]
+    data: ICollection[]
 }
 
 
 SwiperCore.use([Navigation, Pagination, Scrollbar])
 const CollentionSlider: FC<CollectionSlideState> = ({data}) => {
+  
     return (    
         <Swiper
         breakpoints = {{
@@ -59,11 +68,11 @@ const CollentionSlider: FC<CollectionSlideState> = ({data}) => {
                                         <h4>{collection.title}</h4>
                                         <div className="collection-book-time">
                                             <div className="collection-books">
-                                                <img src={booksCol} alt=""/>
+                                                <img src={booksCol} alt={collection.title}/>
                                                 <span>{`${collection.books} книг`}</span>
                                             </div>
                                             <div className="collection-time">
-                                                <img src={clock} alt=""/>
+                                                <img src={clock} alt={collection.title}/>
                                                 <span>{collection.time}</span>
                                             </div>
                                         </div>

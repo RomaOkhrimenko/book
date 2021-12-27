@@ -14,5 +14,6 @@ const db = firebase.firestore()
 const auth = firebase.auth()
 const user = firebase.auth().currentUser
 
+// @typescript-eslint/no-unused-vars
 export { auth }
 export default db

@@ -5,10 +5,10 @@ import Depen from "./Depen/Depen";
 import "./Player.css";
 
 interface PlayerState {
-  image: any;
+  image: string;
   title: string;
   author: string;
-  viewPlayer: any
+  viewPlayer: () => void
 }
 
 const Player: FC<PlayerState> = ({ image, title, author, viewPlayer }) => {

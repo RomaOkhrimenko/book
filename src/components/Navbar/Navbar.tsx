@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import { FC } from 'react'
 
 import './Navbar.css'
 
@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom'
 import navClose from '../../assets/image/close.png'
 
 interface NavbarState {
-    navPhone: any
-    navbarPhone: any
+    navPhone: () => void;
+    navbarPhone: boolean
 }
 
 const Navbar: FC<NavbarState> = ({navPhone, navbarPhone}) => {
@@ -42,12 +42,12 @@ const Navbar: FC<NavbarState> = ({navPhone, navbarPhone}) => {
                 <h3>подкасты</h3>
             </div>
             <ul>
-                <li><a>Интервью</a></li>
-                <li><a>Юмор</a></li>
-                <li><a>Образовательные</a></li>
-                <li><a>Спорт</a></li>
-                <li><a>Игры</a></li>
-                <li><a>Бизнес</a></li>
+                <li><Link to='/'>Интервью</Link></li>
+                <li><Link to='/'>Юмор</Link></li>
+                <li><Link to='/'>Образовательные</Link></li>
+                <li><Link to='/'>Спорт</Link></li>
+                <li><Link to='/'>Игры</Link></li>
+                <li><Link to='/'>Бизнес</Link></li>
             </ul>
 
             <div className="navigation-title">
@@ -55,9 +55,9 @@ const Navbar: FC<NavbarState> = ({navPhone, navbarPhone}) => {
                 <h3>меню</h3>
             </div>
             <ul>
-                <li><a>Подборки</a></li>
-                <li><a>Авторы</a></li>
-                <li><a>Дикторы</a></li>
+                <li><Link to='/'>Подборки</Link></li>
+                <li><Link to='/'>Авторы</Link></li>
+                <li><Link to='/'>Дикторы</Link></li>
             </ul>
 
 

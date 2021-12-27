@@ -1,34 +1,9 @@
+import { addBookAction, BookActionTypes, fetchAuthorAction, fetchBestsellerAction, Iauthor, Ibook, loaderAction } from "../types/bookTypes";
+
 interface initialState {
-  book: any;
+  book: Ibook;
   bestseller: any[];
-  author: any;
-  loader: boolean;
-}
-
-export enum BookActionTypes {
-  ADD_BOOK = "ADD_BOOK",
-  ADD_BESTSELLER = "ADD_BESTSELLER",
-  ADD_AUTHOR = "ADD_AUTHOR",
-  LOADER = "LOADER",
-}
-
-interface addBookAction {
-  type: BookActionTypes.ADD_BOOK;
-  book: any;
-}
-
-interface fetchBestsellerAction {
-  type: BookActionTypes.ADD_BESTSELLER;
-  bestseller: any;
-}
-
-interface fetchAuthorAction {
-  type: BookActionTypes.ADD_AUTHOR;
-  author: any;
-}
-
-interface loaderAction {
-  type: BookActionTypes.LOADER;
+  author: Iauthor;
   loader: boolean;
 }
 
@@ -39,9 +14,9 @@ type bookAction =
   | loaderAction;
 
 const initialState: initialState = {
-  book: {},
+  book: {id: 0, title: '', author: '', image: '', liked: false, desc: ''},
   bestseller: [],
-  author: [],
+  author: {id: 1, desc: '', firstName: '', lastName: '', fullName: '', image: '', imagelarge: ''},
   loader: false,
 };
 
@@ -49,7 +24,6 @@ export const bookReducer = (
   state = initialState,
   action: bookAction
 ): initialState => {
-  console.log("action", action);
 
   switch (action.type) {
     case BookActionTypes.ADD_BOOK:
@@ -59,6 +33,8 @@ export const bookReducer = (
       return { ...state, bestseller: action.bestseller };
 
     case BookActionTypes.ADD_AUTHOR:
+      console.log(action.author);
+
       return { ...state, author: action.author };
 
     case BookActionTypes.LOADER:

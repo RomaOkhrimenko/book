@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import './GenrePage.css'
 
@@ -8,12 +8,22 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addBookAction } from '../../state/actions/bookAction'
 
+interface IGenre {
+    id: number;
+    image: string;
+    title: string;
+    author: string;
+    desc: string
+    time: string;
+}
+
 interface GenrePage {
     title: string
-    data: any[]
+    data: IGenre[]
 }
 
 const GenresPage: FC<GenrePage> = ({title, data}) => {
+    
     const dispatch = useDispatch()
 
     return (
@@ -23,9 +33,9 @@ const GenresPage: FC<GenrePage> = ({title, data}) => {
             </div>
             {data.map(book => (
                 
-                <div className="result-search-book">
+                <div key={book.id} className="result-search-book">
                 <Link to="/book">
-                <img onClick={() => dispatch(addBookAction(book))} src={book.image} alt="" />
+                <img onClick={() => dispatch(addBookAction(book))} src={book.image} alt={book.image} />
                 </Link>
                 <div className="search-book-info">
                     <h4>{book.title}</h4>

@@ -2,6 +2,7 @@
     max-width: 400px;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.452);
+    padding: 20px 10px;
 }
 
 .login-container {
@@ -22,7 +23,13 @@
 
 .login-inputs > input {
     margin: 10px;
-    
+    background: none;
+    outline: none;
+    border: 1px solid rgb(61, 60, 60);
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 15px;
 }
 
 .login-de {
@@ -56,4 +63,15 @@
 
 .register-inputs > input {
     margin: 10px;
+}
+
+.login-container > button {
+    background-color: rgb(75, 75, 75);
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: 1px solid #000;
+    box-shadow: 2px 3px 5px #000;
+    border-radius: 10px;
 }

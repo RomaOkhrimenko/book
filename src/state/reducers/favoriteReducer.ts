@@ -1,13 +1,4 @@
-export enum FavoriteActionTypes {
-    ADDBOOKFAVORITE = "ADDBOOKFAVORITE",
-    ADDAUTHOR = "ADDAUTHOR"
-}
-
-interface favoriteAddBookAction {
-    type: FavoriteActionTypes.ADDBOOKFAVORITE,
-    book: any,
-    id: number
-}
+import { FavoriteActionTypes, favoriteAddBookAction } from "../types/favoriteTypes"
 
 interface FavoriteState {
     books: any[]

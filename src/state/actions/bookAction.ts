@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BookActionTypes } from "../reducers/bookReducer";
+import { BookActionTypes } from "../types/bookTypes";
 
 export function addBookAction(book:any) {
     return {

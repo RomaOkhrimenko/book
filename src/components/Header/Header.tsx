@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import { FC } from 'react'
 
 import './Header.css'
 
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 interface HeaderState {
     title?: string
-    navPhone?: any
+    navPhone?: () => void
 }
 
 const Header: FC<HeaderState> = ({title = 'Войти', navPhone}) => {

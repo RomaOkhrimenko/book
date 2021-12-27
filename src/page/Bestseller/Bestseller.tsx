@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useTypesSelector } from '../../hooks/useTypesSelector'
 import { fetchBestsellerAction } from '../../state/actions/bookAction'
@@ -28,8 +27,8 @@ const Bestseller: FC = () => {
                     <img src={book.book_image} alt={book.title} />
                     <div className="bestseller-buy">
                         <div>
-                        {book.buy_links.map((buy:any) => {
-                           return <div> <a href={buy.url}data-tooltip={buy.name} type="_blank"><FontAwesomeIcon icon={faShoppingCart}/></a>
+                        {book.buy_links.map((buy:any, index:number) => {
+                           return <div key={index}> <a href={buy.url}data-tooltip={buy.name} type="_blank"><FontAwesomeIcon icon={faShoppingCart}/></a>
                                     <div className="bestseller-buy-info">
                                     <span>{buy.name}</span>
                                 </div>

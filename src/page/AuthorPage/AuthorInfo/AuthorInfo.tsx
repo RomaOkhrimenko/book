@@ -1,15 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import "./AuthorInfo.css";
 
-import author from "../../../assets/image/authors/stiv.png";
 import starImg from "../../../assets/image/books/star.png";
 import starDesc from "../../../assets/image/books/star-rate-desc.png";
 import bookOpen from "../../../assets/image/authors/book-open.png";
 
 interface AuthorState {
   fullName: string
-  image: any
+  image: string
   desc: string
 }
 
@@ -17,7 +16,7 @@ const AuthorInfo: FC<AuthorState> = ({fullName, image, desc}) => {
   return (
     <div className="main-author">
       <div className="author-image-rate">
-        <img src={image} alt="" />
+        <img src={image} alt={fullName} />
         <div className="author-rate">
           <div className="author-rate-star">
             <img src={starImg} alt="starImg" />

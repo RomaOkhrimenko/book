@@ -1,19 +1,12 @@
-import React, { FC } from 'react'
-import firebase from 'firebase'
+import { FC } from 'react'
 import { auth } from '../../firebase/firebase'
 
 import './ProfilePage.css'
 
 import BooKSlide from '../../components/BookSlider/BookSlider';
-import AuthorSlide from '../../components/AuthorSlider/AuthorSlider';
-import { author } from '../../features/homePage/author';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../state/actions/userAction';
 import { useTypesSelector } from '../../hooks/useTypesSelector';
-
-const user = firebase.auth().currentUser
-
-console.log(user);
 
 const ProfilePage: FC = () => {
     const { books } = useTypesSelector(state => state.favorite)
@@ -29,7 +22,7 @@ const ProfilePage: FC = () => {
                 <div className="recommends-title">
                 <h3>Избранные Книги</h3>
                 </div>
-                {books.length == 0 
+                {books.length === 0 
                 ? 
                     <div className='FavoriteBooks'>
                         <div className="favoriteEmpy">

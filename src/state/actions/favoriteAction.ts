@@ -1,4 +1,4 @@
-import { FavoriteActionTypes } from "../reducers/favoriteReducer";
+import { FavoriteActionTypes } from './../types/favoriteTypes';
 
 export function addBookFavorite(book: any, id:number) {
     return {

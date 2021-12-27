@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 
 interface SliderState {
     percentage: number
-    onChange: any
+    onChange: () => number
 }
 
 const Slide: FC<SliderState> = ({percentage, onChange}) => {

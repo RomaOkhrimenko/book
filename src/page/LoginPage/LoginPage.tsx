@@ -24,8 +24,6 @@ const LoginPage: FC = () => {
       })
   };
 
-  const user = firebase.auth().currentUser
-
   const signIn = (e: any) => {
     e.preventDefault();
 
@@ -48,13 +46,13 @@ const LoginPage: FC = () => {
           <div className="login-inputs">
             <input ref={emailRef} type="email" placeholder="Login" />
             <input ref={passwordRef} type="password" placeholder="Password" />
-            <input type="text" onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="username" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="login-de">
             <span onClick={() => setLogin(prev => !prev)}>Есть аккаунт?</span>
           </div>
           <button onClick={register} type="submit">
-            Sign In
+            Sign Up
           </button>
         </form>
       ) : (

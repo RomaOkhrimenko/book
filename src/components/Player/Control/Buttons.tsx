@@ -8,18 +8,19 @@ import Slide from './Slide'
 
 
 interface ButtonState {
-    percentage?: any
-    onChange?: any
-    play?: any
-    isPlaying?: any
-    duration?: any
-    currentTime?: any
-    audioRef?: any
-    rewindLeft: any
-    rewindRight: any
+    percentage: any;
+    onChange: any;
+    play: () => void;
+    isPlaying: boolean;
+    duration: number;
+    currentTime: number;
+    audioRef?: any;
+    rewindLeft: () => void;
+    rewindRight: () => void;
 }
 
 const Buttons:FC<ButtonState> = ({percentage, onChange, play, isPlaying, duration, currentTime,rewindLeft, rewindRight}) => {
+  
     function secondsToHms(seconds: any) {
         if (!seconds) return '00m 00s'
     

@@ -1,11 +1,9 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
-import volume from '../../../assets/image/books/player/volume.png'
-import menu from '../../../assets/image/books/player/player-menu.png'
 import closePlayer from '../../../assets/image/books/player/close-player.png'
 
 interface DepenState {
-    viewPlayer?: any
+    viewPlayer: () => void
 }
 
 const Depen:FC<DepenState> = ({viewPlayer}) => {
